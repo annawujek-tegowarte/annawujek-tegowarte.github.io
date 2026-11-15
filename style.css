@@ -487,3 +487,12 @@ main .grid article>span{
 
 /* Center the decorative contact camera on mobile. */
 @media(max-width:700px){.contact-camera .camera-accent{justify-content:center;justify-self:center;width:100%}.contact-camera .camera-accent img{margin-left:auto;margin-right:auto}}
+
+/* Clear, comfortably tappable navigation on phones. */
+@media(max-width:700px){
+ nav>div{display:grid;grid-template-columns:.85fr .7fr 1.5fr 1.15fr;gap:6px;width:100%;font-size:clamp(11px,3.3vw,14px);letter-spacing:.3px}
+ nav>div>a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:9px 4px;margin:0;border:1px solid #b69b84;border-radius:4px;background:#eee3d6;color:#594234;line-height:1.2;white-space:nowrap;transition:background-color .2s,color .2s,border-color .2s}
+ nav>div>a[aria-current="page"]{background:#665044;border-color:#665044;color:#fff9f1}
+ nav>div>a:hover,nav>div>a:focus-visible{background:#7b5b45;border-color:#7b5b45;color:#fff9f1}
+ nav>div>a:focus-visible{outline:2px solid #665044;outline-offset:3px}
+}
