@@ -479,3 +479,8 @@ main .grid article>span{
  .entry-frame p{font-size:14px}
  .welcome-socials{margin-top:22px;gap:22px}
 }
+
+/* Blend the cropped portrait into the mobile opening background. */
+@media(max-width:700px){
+ .welcome-photo img{-webkit-mask-image:linear-gradient(to top,transparent 0%,#000 22%);mask-image:linear-gradient(to top,transparent 0%,#000 22%)}
+}
