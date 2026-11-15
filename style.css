@@ -464,3 +464,18 @@ main .grid article>span{
 
 .welcome-content>p{white-space:normal}
 @media(max-width:380px){nav .brand{gap:9px}.brand-wordmark{width:140px}nav .brand-wordmark .brand-logo{width:140px;top:-57px}}
+
+/* Stack the opening on phones so the portrait does not sink below the cards. */
+@media(max-width:700px){
+ .welcome{grid-template-columns:minmax(0,1fr)}
+ .welcome-photo{height:300px;padding:18px 20px 0;grid-row:1}
+ .welcome-photo img{width:auto;height:100%;max-width:85%;max-height:282px;min-height:0}
+ .welcome-content{padding:26px 6% 32px;min-width:0}
+ .welcome h1{font-size:clamp(34px,9vw,44px);margin:14px 0}
+ .welcome-content>p{font-size:18px;max-width:100%;margin-top:14px;margin-bottom:24px}
+ .entry-links{gap:14px}
+ .entry-frame{padding:18px 20px}
+ .entry-frame h2{font-size:26px}
+ .entry-frame p{font-size:14px}
+ .welcome-socials{margin-top:22px;gap:22px}
+}
