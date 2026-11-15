@@ -1,7 +1,7 @@
 (()=>{
  const preference=window.matchMedia('(prefers-reduced-motion: reduce)');
  if(preference.matches||!('IntersectionObserver' in window))return;
- const targets=[...document.querySelectorAll('.welcome-photo,.welcome-content,.portfolio-intro,.about>div,.about>img,.grid article,.notes>div,.trusted-brands>h2,.brand-list li,.trusted-note,.contact-copy,.camera-accent')];
+ const targets=[...document.querySelectorAll('.welcome-photo,.welcome-content,.portfolio-intro,.section>h2,.about>div,.about>img,.grid article,.notes>div,.trusted-brands>h2,.brand-list li,.trusted-note,.contact-copy,.camera-accent')];
  let observer;
  const reveal=element=>{
   element.classList.add('is-visible');
@@ -18,6 +18,11 @@
    element.style.setProperty('--reveal-delay',stagger+'ms');
    element.classList.add('motion-reveal');
    observer.observe(element);
+  });
+  window.addEventListener('pageshow',event=>{
+   if(!event.persisted||preference.matches)return;
+   targets.forEach(element=>{element.classList.remove('is-visible');observer.unobserve(element);});
+   requestAnimationFrame(()=>targets.forEach(element=>observer.observe(element)));
   });
   document.addEventListener('focusin',event=>{
    const target=event.target.closest('.motion-reveal');

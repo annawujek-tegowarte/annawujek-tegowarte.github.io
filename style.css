@@ -496,3 +496,9 @@ main .grid article>span{
  nav>div>a:hover,nav>div>a:focus-visible{background:#7b5b45;border-color:#7b5b45;color:#fff9f1}
  nav>div>a:focus-visible{outline:2px solid #665044;outline-offset:3px}
 }
+
+/* Keyframes also run when an element is revealed before the first paint. */
+@keyframes portfolio-reveal{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:no-preference){
+ .motion-reveal.is-visible{animation:portfolio-reveal .8s cubic-bezier(.2,.65,.3,1) var(--reveal-delay,0ms) both;transition:none}
+}
