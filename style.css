@@ -484,3 +484,6 @@ main .grid article>span{
 @media(max-width:700px){
  .welcome-photo img{-webkit-mask-image:linear-gradient(to top,transparent 0%,#000 22%);mask-image:linear-gradient(to top,transparent 0%,#000 22%)}
 }
+
+/* Center the decorative contact camera on mobile. */
+@media(max-width:700px){.contact-camera .camera-accent{justify-content:center;justify-self:center;width:100%}.contact-camera .camera-accent img{margin-left:auto;margin-right:auto}}
