@@ -1,0 +1,466 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f3ed;color:#292622;font:16px/1.7 Arial,sans-serif}a{color:inherit;text-decoration:none}nav{display:flex;justify-content:space-between;align-items:center;padding:22px 6%;border-bottom:1px solid #ddd4cb}nav strong{font:26px Georgia}nav div{display:flex;gap:28px;font-size:12px;letter-spacing:1px}main{max-width:1400px;margin:auto}h1,h2,h3{font-weight:400}h1{font:clamp(56px,7vw,100px)/1.03 Georgia;margin:22px 0}h1 em,h2 em{color:#9a6359}h2{font:clamp(36px,4vw,58px)/1.15 Georgia}p{max-width:560px;color:#70665e}.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#876b58}.hero{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center;padding:70px 6% 100px}.portraits{position:relative;padding:0 0 40px 60px}.portraits .large{width:100%;height:600px;object-fit:cover;object-position:50% 58%}.portraits .small{position:absolute;bottom:0;left:0;width:42%;border:8px solid #f7f3ed;box-shadow:0 10px 30px #29262218}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-block;padding:13px 24px;background:#665044;color:white;font-size:12px;letter-spacing:1px}.button.light{background:transparent;border:1px solid #9a8a7c;color:#292622}.section{padding:70px 6%;border-top:1px solid #ddd4cb}.paths{display:grid;grid-template-columns:1fr 1fr;gap:35px}.path{border-top:1px solid #b7a99b;padding-top:25px}.path h3{font:38px Georgia;margin:16px 0}.path a{display:inline-block;border-bottom:1px solid;margin-top:15px}.about{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center}.about img{width:100%;max-height:550px;object-fit:cover;object-position:50% 30%}.intro{padding:70px 6% 40px}.intro h1{font-size:clamp(50px,6vw,80px)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 24px}.grid video{display:block;background:#e1d9ce;width:100%;aspect-ratio:9/16;object-fit:contain}.grid h3{font:24px Georgia;margin:12px 0 0}.grid span{font-size:11px;color:#8a7768;letter-spacing:2px}.contact{background:#665044;color:#f7f3ed;padding:70px 6%;margin-top:50px}.contact p{color:#e5d7c8}.contact a.mail{font:clamp(22px,4vw,48px) Georgia;border-bottom:1px solid #b79f8b;overflow-wrap:anywhere}footer{padding:22px 6%;font-size:11px;letter-spacing:1px}.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.notes h3{font:25px Georgia}@media(max-width:700px){nav{align-items:start;gap:20px}nav div{gap:12px;flex-wrap:wrap;justify-content:end;font-size:10px}.hero{grid-template-columns:1fr;padding-top:40px;gap:45px}.portraits .large{height:470px}.portraits{padding-left:45px}.paths,.about,.notes{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr);gap:25px 12px}.grid h3{font-size:20px}.section{padding:45px 6%}}
+.opening{padding:55px 6% 65px}.opening-title{text-align:center}.opening-title h1{font-size:clamp(52px,6.5vw,90px);margin:20px 0 45px}.photo-story{display:grid;grid-template-columns:1fr .85fr 1fr;gap:4%;align-items:center}.photo-story figure{margin:0}.photo-story img{display:block;width:100%;height:410px;object-fit:cover;object-position:center 40%}.photo-story figure:last-child{padding-top:60px}.photo-story figure:last-child img{object-position:center 57%}.photo-story figcaption{font:italic 19px Georgia;padding-top:12px;color:#876b58}.story-copy{text-align:center}.story-copy p{font-size:17px}.text-link{font-size:12px;border-bottom:1px solid #9a6359;padding-bottom:6px}.offer .paths{display:block}.offer .path{display:grid;grid-template-columns:120px 1fr 1.2fr;gap:25px;align-items:center;padding:30px 0}.offer .path h3{margin:0}.offer .path a{grid-column:2/4;width:fit-content;margin:0}.offer .path p{margin:0}.offer .path:last-child{margin-top:10px}.offer{background:#eee6dd}@media(max-width:700px){.opening{padding:40px 6%}.opening-title h1{margin-bottom:30px}.photo-story{grid-template-columns:1fr 1fr;gap:18px}.photo-story img{height:300px}.photo-story figure:last-child{padding-top:25px}.story-copy{grid-column:1/3;grid-row:2;text-align:left;padding-top:15px}.photo-story figcaption{font-size:16px}.offer .path{grid-template-columns:1fr;gap:12px}.offer .path a{grid-column:auto}}
+
+nav .brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.brand-divider{color:#b7a99b;font:22px Arial}.brand-studio{font:14px Arial;letter-spacing:1px}@media(max-width:700px){nav .brand{gap:6px;font-size:22px}.brand-studio{font-size:10px}.brand-divider{font-size:17px}nav{flex-wrap:wrap}nav div{justify-content:start}}
+
+.welcome{position:relative;isolation:isolate;display:grid;grid-template-columns:.9fr 1.1fr;min-height:620px;align-items:stretch;background:linear-gradient(to bottom,#eee5da 0%,#eee5da 35%,#eee4d8 55%,#ede2d5 72%,#ede1d3 88%,#eee3d7 100%)}
+.welcome-photo{position:relative;isolation:isolate;display:flex;align-items:end;justify-content:center;padding:45px 30px 0;overflow:hidden}
+.welcome-photo::before{content:"";position:absolute;z-index:-1;inset:15% -5% 0;background:radial-gradient(ellipse,rgba(255,249,240,.58),rgba(246,231,214,.2) 45%,transparent 72%);filter:blur(40px);pointer-events:none}
+.welcome-photo img{position:relative;display:block;width:85%;max-height:565px;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.08) 5%,rgba(0,0,0,.3) 12%,rgba(0,0,0,.64) 22%,rgba(0,0,0,.9) 33%,#000 44%);mask-image:linear-gradient(to top,transparent 0%,rgba(0,0,0,.08) 5%,rgba(0,0,0,.3) 12%,rgba(0,0,0,.64) 22%,rgba(0,0,0,.9) 33%,#000 44%)}
+.welcome-content{align-self:center;padding:45px 10% 45px 0}.welcome h1{font-size:clamp(44px,4.5vw,68px);margin:18px 0}.welcome h1 em{font-weight:400;color:#9a6359}.welcome-content>p{font-size:16px;margin-bottom:28px}.entry-links{display:grid;gap:16px}.entry-frame{display:block;border:1px solid #ad9380;padding:20px 24px;transition:background .2s,transform .2s}.entry-frame:hover,.entry-frame:focus-visible{background:#f7f3ed;transform:translateX(4px)}.entry-frame h2{font-size:31px;margin:8px 0}.entry-frame h2 span{float:right;font:24px Arial}.entry-frame small{font:italic 21px Georgia}.entry-frame p{font-size:13px;line-height:1.6;margin:0}.welcome-socials{display:flex;gap:24px;margin-top:25px;font-size:12px;color:#765d4b}
+@media(max-width:700px){.welcome{grid-template-columns:.85fr 1.15fr;min-height:0}.welcome-photo{padding:20px 0 0}.welcome-photo img{width:100%;min-height:0;max-height:460px;object-fit:contain;object-position:bottom}.welcome-content{padding:30px 16px 30px 8px}.welcome h1{font-size:33px}.welcome-content>p{font-size:13px}.entry-frame{padding:13px 12px}.entry-frame h2{font-size:23px}.entry-frame small{font-size:16px}.entry-frame p{font-size:12px}.welcome .eyebrow{letter-spacing:1.3px;font-size:9px}.welcome-socials{gap:12px;flex-wrap:wrap;font-size:11px}}
+
+.entry-cta{display:inline-block;margin-top:15px;padding-bottom:2px;border-bottom:1px solid #b39a86;font-size:11px;letter-spacing:1px;color:#765d4b}.welcome-socials a,.contact a[href*="instagram.com"]{display:inline-flex;gap:8px;align-items:center}.ig-icon{width:18px;height:18px;flex-shrink:0}.entry-frame:hover,.entry-frame:focus-visible{transform:none;background:rgba(255,250,244,.45)}
+/* Background haze stays behind the fully visible portrait. */
+.welcome-photo img{-webkit-mask-image:none;mask-image:none;z-index:1}
+.welcome-photo::before{z-index:0}
+/* Full-width light-brown background, softly blended into warm beige. */
+.welcome{background:linear-gradient(180deg,#eee5da 0%,#eee5da 16%,#ede2d5 34%,#e8d9c9 52%,#e1cdb9 72%,#d7bda4 100%)}
+.welcome-photo::before{background:radial-gradient(ellipse,rgba(255,249,240,.24),rgba(246,231,214,.08) 45%,transparent 72%)}
+/* Slightly lighter offer cards with the existing hover highlight. */
+.entry-frame{background:rgba(255,250,244,.26)}
+.entry-frame:hover,.entry-frame:focus-visible{background:rgba(255,250,244,.55)}
+.brand-studio{color:#9a6359}
+
+.brand-studio{font:400 21px/1.2 Georgia,serif;letter-spacing:.2px;color:#9a6359}.brand-studio em{font-weight:400}@media(max-width:700px){.brand-studio{font-size:16px}}
+.brand-studio{font-style:italic}
+/* Restrained warm-gold shadow under the complete brand heading. */
+nav .brand{text-shadow:0 1px 1px rgba(176,137,67,.22),0 3px 9px rgba(192,153,79,.18)}
+nav .brand .brand-studio{font-weight:400;font-style:italic}
+nav .brand .brand-studio{font-family:Baskerville,'Times New Roman',serif;font-weight:400;font-style:italic;text-shadow:0 2px 7px rgba(192,153,79,.14)}
+nav .brand .brand-studio{font-size:23px}@media(max-width:700px){nav .brand .brand-studio{font-size:17px}}
+/* Editorial serif for the personal opening line. */
+.welcome-content>p{font-family:Baskerville,'Times New Roman',serif;font-size:23px;font-weight:400;font-style:normal;line-height:1.5;letter-spacing:.1px;color:#705a4d;max-width:490px;margin-top:20px;margin-bottom:30px}@media(max-width:700px){.welcome-content>p{font-size:18px;line-height:1.45}}
+.welcome-content>p{font-family:Didot,'Bodoni 72',serif;font-size:22px;line-height:1.6;letter-spacing:.2px}@media(max-width:700px){.welcome-content>p{font-size:18px}}
+.welcome-content>p{font-family:Palatino,'Palatino Linotype','Book Antiqua',serif;font-size:20px;font-weight:400;font-style:normal;line-height:1.6;letter-spacing:0}@media(max-width:700px){.welcome-content>p{font-size:17px}}
+.welcome-content>p{font-family:'Times New Roman',Times,serif;font-size:22px;font-weight:400;font-style:normal;line-height:1.55;letter-spacing:.1px}@media(max-width:700px){.welcome-content>p{font-size:18px}}
+
+.welcome-content>p:has(+p){margin-bottom:6px}.welcome-content>p+p{margin-top:0}
+@media(min-width:701px){.welcome-content>p{max-width:none;white-space:nowrap;font-size:clamp(13px,1.18vw,16.5px);letter-spacing:0}}
+@media(min-width:701px){.welcome-content>p{font-size:20px}}
+/* Consistent classic text across the site; display headings retain their fonts. */
+body{font-family:'Times New Roman',Times,serif;font-size:18px}
+.entry-frame p{font-family:inherit;font-size:17px;line-height:1.5}
+.entry-cta{font-family:inherit;font-size:14px;letter-spacing:.3px}
+.grid span{font-family:inherit;font-size:12px}
+.contact p,.notes p,.about p{font-family:inherit}
+@media(max-width:700px){body{font-size:17px}.entry-frame p{font-size:14px}.entry-cta{font-size:12px}}
+
+.entry-frame p{font-family:"Avenir Next",Avenir,Arial,sans-serif;font-size:15px;font-weight:400;line-height:1.6;letter-spacing:0}@media(max-width:700px){.entry-frame p{font-size:13px}}
+.welcome-socials,.contact a[href*="instagram.com"]{font-family:'Avenir Next',Avenir,Arial,sans-serif;font-weight:400;font-style:normal;letter-spacing:0}
+.welcome-socials{font-size:14px}.welcome-socials .ig-icon{width:20px;height:20px}@media(max-width:700px){.welcome-socials{font-size:13px}}
+/* About section: copy left, portrait right. */
+.about>div{grid-column:1;grid-row:1}.about>img{grid-column:2;grid-row:1}
+@media(max-width:700px){.about>div{grid-column:1;grid-row:1}.about>img{grid-column:1;grid-row:2}}
+
+.about>img{height:520px;max-height:none;object-fit:cover;object-position:65% 58%;width:100%}@media(max-width:700px){.about>img{height:430px}}
+/* Quiet editorial frame for the about portrait. */
+.about>img{padding:10px;background:#f7f3ed;border:1px solid #bda58f;box-shadow:0 5px 20px rgba(102,80,68,.06)}
+
+.about>img{object-position:50% 50%}
+
+.about>img{object-position:70% 50%}
+
+.about>img{object-fit:contain;object-position:center}
+
+nav .brand-logo{display:block;width:145px;height:85px;object-fit:contain;filter:drop-shadow(0 1px 3px rgba(176,137,67,.1))}
+.welcome{margin:28px 3%;border:1px solid #bda58f;padding:12px;background-clip:content-box}
+@media(max-width:700px){nav .brand-logo{width:105px;height:62px}.welcome{margin:18px 3%;padding:7px}}
+/* Compact logo and a frame flush with the opening background. */
+nav .brand-logo{width:105px;height:60px}
+.welcome{padding:0;background-clip:border-box}
+@media(max-width:700px){nav .brand-logo{width:88px;height:50px}.welcome{padding:0}}
+
+/* Full-bleed opening with its fine border retained. */
+.welcome{width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);padding:0;border:1px solid #bda58f;background-clip:border-box}
+/* Display only the original logo lettering, keeping the camera outside the crop. */
+.brand-wordmark{position:relative;display:block;width:190px;height:38px;overflow:hidden}
+nav .brand-wordmark .brand-logo{position:absolute;width:190px;height:auto;max-width:none;left:0;top:-77px}
+@media(max-width:700px){.welcome{margin:0 0 0 calc(50% - 50vw);padding:0}.brand-wordmark{width:145px;height:30px}nav .brand-wordmark .brand-logo{width:145px;height:auto;top:-59px}}
+/* Give the name, divider and wordmark room without increasing header height. */
+nav .brand{gap:24px;flex-wrap:nowrap;white-space:nowrap}
+.brand-divider{margin:0 4px}
+nav{column-gap:40px}
+@media(max-width:700px){nav .brand{gap:14px}.brand-divider{margin:0 2px}nav{row-gap:18px}}
+.brand-wordmark{width:205px;transform:translateY(3px)}
+nav .brand-wordmark .brand-logo{width:205px;top:-83px}
+@media(max-width:700px){.brand-wordmark{width:155px;transform:translateY(2px)}nav .brand-wordmark .brand-logo{width:155px;top:-63px}}
+.brand-wordmark{width:220px}
+nav .brand-wordmark .brand-logo{width:220px;top:-89px}
+@media(max-width:700px){.brand-wordmark{width:165px}nav .brand-wordmark .brand-logo{width:165px;top:-67px}}
+/* Visible side rules inset slightly from viewport edges. */
+.welcome::after{content:"";position:absolute;inset:0 12px;border-left:1px solid #bda58f;border-right:1px solid #bda58f;pointer-events:none;z-index:3}
+@media(max-width:700px){.welcome::after{left:6px;right:6px}}
+nav>div>a{transition:color .2s ease,background-color .2s ease; padding:7px 10px; margin:-7px -10px;border-radius:2px}
+nav>div>a:hover,nav>div>a:focus-visible{color:#8b5e47;background-color:rgba(166,126,94,.12)}
+/* Keep a single flush frame with no inset side rules. */
+.welcome::after{display:none}
+.welcome{border:1px solid #bda58f;padding:0;background-clip:border-box}
+.about .eyebrow,.contact>.eyebrow{font-size:18px;letter-spacing:2.5px}
+@media(max-width:700px){.about .eyebrow,.contact>.eyebrow{font-size:16px}}
+
+.inline-profile{color:#8b5e47;text-decoration:underline;text-underline-offset:3px;transition:color .2s}.inline-profile:hover,.inline-profile:focus-visible{color:#563e30}
+.inline-profile{text-decoration:none}
+
+.contact-portrait{display:grid;grid-template-columns:1.2fr 1fr;gap:4%;padding:50px 6% 0;align-items:end;overflow:hidden}
+.contact-copy{align-self:center;padding-bottom:50px;min-width:0}.contact-copy>.eyebrow{font-size:18px;letter-spacing:2.5px}.contact-portrait a.mail{font-size:clamp(22px,3vw,38px)}
+.contact-photo{display:flex;align-items:end;justify-content:center}.contact-photo img{display:block;max-width:100%;height:510px;object-fit:contain;object-position:bottom}
+@media(max-width:700px){.contact-portrait{grid-template-columns:1fr}.contact-copy{padding-bottom:15px}.contact-photo img{height:350px}.contact-copy>.eyebrow{font-size:16px}}
+/* Contact portrait left; gently blend the photographed arm edges into the background. */
+.contact-portrait{grid-template-columns:1fr 1.2fr}
+.contact-portrait .contact-photo{grid-column:1;grid-row:1}
+.contact-portrait .contact-copy{grid-column:2;grid-row:1}
+.contact-photo img{-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.3) 3%,#000 10%,#000 90%,rgba(0,0,0,.3) 97%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.3) 3%,#000 10%,#000 90%,rgba(0,0,0,.3) 97%,transparent 100%)}
+@media(max-width:700px){.contact-portrait{grid-template-columns:1fr}.contact-portrait .contact-photo{grid-column:1;grid-row:2}.contact-portrait .contact-copy{grid-column:1;grid-row:1}}
+
+.contact-portrait{padding-bottom:50px;align-items:center}
+.contact-photo img{-webkit-mask-image:none;mask-image:none;width:100%;height:480px;object-fit:contain;object-position:center;padding:10px;background:#f7f3ed;border:1px solid #bda58f}
+.contact-portrait .contact-copy{padding-bottom:0}
+@media(max-width:700px){.contact-photo img{height:390px}}
+
+.contact-camera{display:grid;grid-template-columns:1.45fr .75fr;gap:5%;align-items:center;padding:70px 6%;position:relative}
+.contact-camera .contact-copy{padding:0}.camera-accent{display:flex;align-items:center;justify-content:center}.camera-accent img{display:block;width:100%;max-width:300px;height:auto;filter:drop-shadow(0 10px 16px rgba(0,0,0,.12))}
+@media(max-width:700px){.contact-camera{grid-template-columns:1fr}.camera-accent img{max-width:190px}.camera-accent{justify-content:flex-end;margin-top:10px}}
+
+.camera-accent img{max-width:380px}@media(max-width:700px){.camera-accent img{max-width:250px}}
+
+.camera-accent img{filter:drop-shadow(0 10px 14px rgba(0,0,0,.23))}
+
+/* Reuse the exact camera linework from the brand logo. */
+.camera-symbol{position:relative;display:block;width:250px;height:215px;overflow:hidden;justify-self:center;align-self:center}
+.camera-symbol img{position:absolute;max-width:none;width:550px;height:auto;left:-150px;top:-24px;filter:none}
+@media(max-width:700px){.camera-symbol{width:180px;height:160px;margin-top:20px}.camera-symbol img{width:400px;max-width:none;left:-110px;top:-17px}}
+
+.camera-graphic{display:flex;position:static;overflow:visible;width:auto;height:auto}
+.camera-graphic img{position:static;display:block;max-width:320px;width:100%;height:auto;filter:none}
+@media(max-width:700px){.camera-graphic img{max-width:220px}}
+/* Single warm beige tone for the decorative camera. */
+.camera-graphic{position:relative}
+.camera-graphic img{visibility:hidden}
+.camera-graphic::before{content:"";position:absolute;inset:0;background:#d3bda5;-webkit-mask:url('aparat-grafika.png') center/contain no-repeat;mask:url('aparat-grafika.png') center/contain no-repeat;pointer-events:none}
+/* Keep the image visible and tint its linework directly. */
+.camera-graphic::before{display:none}
+.camera-graphic img{visibility:visible;filter:brightness(0) saturate(100%) invert(82%) sepia(17%) saturate(400%) hue-rotate(345deg)}
+/* Larger, quieter camera ornament. */
+.camera-graphic img{max-width:410px;opacity:.42;filter:brightness(0) saturate(100%) invert(82%) sepia(17%) saturate(240%) hue-rotate(345deg)}
+@media(max-width:700px){.camera-graphic img{max-width:280px}}
+
+.contact-copy h2{font-size:clamp(36px,4vw,56px);line-height:1.13;margin:22px 0 24px}
+.contact-copy>p{font-family:'Avenir Next',Avenir,Arial,sans-serif;font-size:15px;line-height:1.65;max-width:520px;margin:0 0 30px}
+.contact-blocks{display:grid;gap:24px;max-width:540px}
+.contact-block{display:grid;justify-items:start;gap:10px;padding-top:19px;border-top:1px solid rgba(229,215,200,.25)}
+.contact-block h3{font-family:Georgia,serif;font-size:21px;font-weight:400;margin:0;color:#f7f3ed}
+.contact .contact-email{font-family:'Avenir Next',Avenir,Arial,sans-serif;font-size:22px;line-height:1.4;color:#f7f3ed;text-decoration:none;border:0;overflow-wrap:anywhere}
+.contact .contact-instagram{font-family:'Avenir Next',Avenir,Arial,sans-serif;font-size:14px;color:#e5d7c8;display:inline-flex;align-items:center;gap:8px}
+.contact-email:hover,.contact-instagram:hover{opacity:.75}
+@media(max-width:700px){.contact .contact-email{font-size:19px}.contact-block h3{font-size:20px}}
+/* Warm beige contact cards with dark-brown typography. */
+.contact-block{padding:22px 25px;background:#eaded1;border:1px solid #d4bda7;gap:11px}
+.contact-block h3{color:#50392d}
+.contact .contact-email{color:#624a3c}
+.contact .contact-instagram{color:#80634f}
+@media(max-width:700px){.contact-block{padding:20px}}
+/* Restore the open contact layout, with a warmer accent on headings. */
+.contact-block{background:transparent;padding:19px 0 0;border:0;border-top:1px solid rgba(229,215,200,.25);gap:10px}
+.contact-block h3{color:#dfbfa4}
+.contact .contact-email{color:#f7f3ed}
+.contact .contact-instagram{color:#e5d7c8}
+@media(max-width:700px){.contact-block{padding:19px 0 0}}
+
+/* UGC portfolio: restrained display sizes and consistent practical copy. */
+.ugc-page .intro{padding:44px 6% 36px}
+.ugc-page .intro h1{font-family:Georgia,serif;font-size:clamp(36px,4vw,50px);font-weight:400;line-height:1.15;margin:18px 0 22px}
+.ugc-page .intro p,.ugc-page .notes p,.ugc-page .contact>p{font-family:'Avenir Next',Avenir,Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.7}
+.ugc-page .intro p{max-width:650px;margin:0}
+.ugc-page .section{padding-top:44px;padding-bottom:44px}
+.ugc-page .section>h2{font-size:clamp(30px,3vw,40px);line-height:1.2;margin:18px 0 32px}
+.ugc-page .eyebrow{font-family:'Avenir Next',Avenir,Arial,sans-serif;font-size:12px;letter-spacing:2px}
+.ugc-page .grid h3{font-size:23px;font-weight:400}
+.ugc-page .grid span{font-family:'Avenir Next',Avenir,Arial,sans-serif;font-size:11px;letter-spacing:1.3px}
+.ugc-page .notes h3{font-size:24px;margin:0 0 12px}
+@media(max-width:700px){.ugc-page .intro{padding-top:32px}.ugc-page .intro p,.ugc-page .notes p{font-size:15px}.ugc-page .section{padding-top:32px;padding-bottom:32px}}
+.ugc-page .intro{text-align:center}
+.ugc-page .intro h1{color:#89634e}
+.ugc-page .intro p{margin-left:auto;margin-right:auto}
+/* Compact brown UGC introduction, bringing the portfolio above the fold. */
+.ugc-page .intro{background:#665044;color:#f7f3ed;padding:22px 6% 24px}
+.ugc-page .intro .eyebrow{color:#dfbfa4;font-size:10px;letter-spacing:2px}
+.ugc-page .intro h1{color:#f7f3ed;font-size:clamp(30px,3.2vw,42px);margin:9px 0 12px;line-height:1.12}
+.ugc-page .intro p{color:#e5d7c8;font-size:14px;line-height:1.5;max-width:760px}
+.ugc-page .intro+.section{padding-top:22px;border-top:0}
+.ugc-page .intro+.section>.eyebrow{display:none}
+.ugc-page .intro+.section>h2{font-size:clamp(26px,2.7vw,34px);margin:0 0 20px}
+@media(max-width:700px){.ugc-page .intro{padding:18px 6%}.ugc-page .intro p{font-size:13px}.ugc-page .intro+.section{padding-top:20px}}
+.ugc-page .intro{border:1px solid #bda58f;background-clip:border-box}
+/* Beige introduction with a distinct brown portfolio section. */
+.ugc-page .intro{background:#eee5da;color:#50392d;border:1px solid #bda58f}
+.ugc-page .intro .eyebrow{color:#876b58}
+.ugc-page .intro h1{color:#89634e}
+.ugc-page .intro p{color:#70665e}
+.ugc-page .intro+.section{background:#665044;color:#f7f3ed;border:1px solid #bda58f;border-top:0}
+.ugc-page .intro+.section>h2{color:#f7f3ed}
+.ugc-page .intro+.section>h2 em{color:#dfbfa4}
+.ugc-page .intro+.section .grid h3{color:#3f2b22}
+.ugc-page .intro+.section .grid article>span{color:#624a3c}
+.ugc-page .intro+.section{background:linear-gradient(180deg,#92745f 0%,#80634f 150px,#705644 330px,#665044 540px,#665044 100%)}
+/* One continuous transition from the beige introduction into the brown gallery. */
+.ugc-page .intro{background:linear-gradient(180deg,#eee5da 0%,#eee5da 36%,#e3d4c3 60%,#c2a78e 82%,#92745f 100%);border-bottom:0;padding-bottom:48px}
+.ugc-page .intro+.section{border-top:0}
+
+.ugc-showcase{border:1px solid #bda58f;background:linear-gradient(180deg,#eee5da 0px,#eee5da 120px,#deccb9 220px,#b99a80 330px,#896a54 470px,#665044 660px,#665044 100%)}
+.ugc-page .ugc-showcase>.intro{background:transparent;border:0;padding-bottom:24px}
+.ugc-page .ugc-showcase>.intro+.section{background:transparent;border:0}
+.ugc-page .ugc-showcase>.intro+.section>h2{color:#624a3c}
+.ugc-page .ugc-showcase>.intro+.section>h2 em{color:#89634e}
+
+.ugc-page .intro h1{color:#50392d;font-size:clamp(36px,4vw,50px);letter-spacing:.2px}
+.ugc-title-main{font-weight:400;letter-spacing:2px}
+.ugc-page .intro h1 em{color:#9a6359;font-weight:400}
+.ugc-page .intro h1,.ugc-page .intro h1 em{color:#50392d}
+.ugc-page .intro h1{color:#50392d}.ugc-page .intro h1 em{color:#9a6359}
+
+/* Compact framed film covers and an accessible enlarged player. */
+.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 22px;align-items:start}
+.grid article{min-width:0}.film-preview{display:block;position:relative;appearance:none;width:100%;max-width:245px;margin:0 auto;padding:6px;border:1px solid #bda58f;background:rgba(247,243,237,.1);cursor:pointer;overflow:hidden;transition:background .2s,border-color .2s}
+.film-preview img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;transition:filter .2s}
+.film-preview:hover,.film-preview:focus-visible{background:rgba(247,243,237,.3);border-color:#ead7c1}
+.film-preview:hover img{filter:brightness(.86)}
+.film-preview:focus-visible{outline:2px solid #dfbfa4;outline-offset:4px}
+.grid .film-play{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:rgba(247,243,237,.92);color:#665044;box-shadow:0 2px 12px #0002}
+.film-play svg{width:25px;height:25px}
+.grid .film-open{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);white-space:nowrap;padding:4px 9px;background:rgba(65,44,32,.7);font:11px 'Avenir Next',Arial,sans-serif;color:#fff;letter-spacing:.5px}
+.grid article>h3,.grid article>span{display:block;max-width:245px;margin-left:auto;margin-right:auto}
+.grid article>h3{font-size:21px;margin-top:12px;margin-bottom:4px}
+.film-dialog{max-width:calc(100vw - 32px);width:min(780px,calc(100vw - 32px));max-height:94dvh;padding:16px;border:1px solid #bda58f;background:#29221d;color:#f7f3ed;overflow:auto}
+.film-dialog::backdrop{background:rgba(28,21,17,.86);backdrop-filter:blur(5px)}
+.film-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:12px}.film-toolbar h2{font:22px Georgia,serif;margin:0}.film-toolbar>div{display:flex;gap:9px}.film-toolbar button{font:13px 'Avenir Next',Arial,sans-serif;background:transparent;color:#f7f3ed;border:1px solid #90745e;padding:8px 11px;cursor:pointer}.film-toolbar button:hover{background:#665044}
+.film-dialog .film-player{display:block;width:100%;height:calc(88dvh - 75px);max-height:800px;object-fit:contain;background:#171310}
+.film-is-open{overflow:hidden}.film-error{font:14px Arial,sans-serif;color:#e5d7c8}.film-error a{text-decoration:underline}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}.film-preview{padding:4px}.grid .film-play{width:40px;height:40px}.film-toolbar{align-items:start}.film-toolbar h2{font-size:18px}.film-toolbar button{font-size:11px;padding:7px}.film-dialog{padding:10px}.grid article>h3{font-size:19px}}
+
+.film-preview .film-cover{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;pointer-events:none}
+
+.film-dialog::backdrop{background:#231b16;backdrop-filter:none;-webkit-backdrop-filter:none}.film-dialog{background:#29221d}
+/* Beige UGC page; frame the introduction only. */
+.ugc-page,.ugc-page .ugc-showcase{background:#f7f3ed}
+.ugc-page .ugc-showcase{border:0}
+.ugc-page .ugc-showcase>.intro{background:#eee5da;border:1px solid #bda58f}
+.ugc-page .ugc-showcase>.intro+.section{background:#f7f3ed;border:0;color:#292622}
+.ugc-page .ugc-showcase>.intro+.section>h2{color:#292622}
+.ugc-page .ugc-showcase>.intro+.section>h2 em{color:#9a6359}
+.ugc-page .ugc-showcase .grid h3{color:#50392d}
+.ugc-page .ugc-showcase .grid article>span{color:#876b58}
+.ugc-page .film-preview{background:#eee5da;border-color:#bda58f}
+.ugc-page .film-preview:hover,.ugc-page .film-preview:focus-visible{background:#e3d4c3;border-color:#96765e}
+
+/* Size the modal to the actual clip rather than a wide black video canvas. */
+.film-dialog{padding:8px;max-height:96dvh;overflow:auto}
+.film-dialog .film-player{display:block;max-width:100%;max-height:none;background:transparent;object-fit:contain;margin:0 auto}
+.film-toolbar{flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.film-toolbar h2{font-size:18px;line-height:1.25}
+.film-toolbar>div{gap:6px;margin-left:auto}
+.film-toolbar button{font-size:11px;padding:6px 8px}
+.film-player:fullscreen{width:100%!important;height:100%!important;object-fit:contain;background:#171310}
+
+/* Shared portfolio introductions: TEGO WARTE layout, compact UGC scale. */
+.ugc-page .ugc-showcase>.intro.portfolio-intro,
+main>.intro.portfolio-intro{
+ background:#f7f3ed;border:0;text-align:left;padding:22px 6% 24px;color:#292622;
+}
+.ugc-page .portfolio-intro h1,
+main>.portfolio-intro h1{
+ font-family:Georgia,serif;font-size:clamp(36px,4vw,50px);font-weight:400;
+ font-style:normal;line-height:1.12;letter-spacing:0;color:#292622;margin:9px 0 12px;
+}
+.ugc-page .portfolio-intro .eyebrow,
+main>.portfolio-intro .eyebrow{
+ font-family:'Times New Roman',Times,serif;font-size:10px;letter-spacing:2px;color:#876b58;
+}
+.ugc-page .portfolio-intro p,
+main>.portfolio-intro p{
+ font-family:'Times New Roman',Times,serif;font-size:16px;font-weight:400;
+ line-height:1.5;max-width:760px;margin:0;color:#70665e;
+}
+main>.portfolio-intro+.section{padding-top:22px;border-top:1px solid #ddd4cb}
+main>.portfolio-intro+.section>h2{font-size:clamp(26px,2.7vw,34px);margin:0 0 20px}
+main>.portfolio-intro+.section>.eyebrow{display:none}
+@media(max-width:700px){
+ .ugc-page .ugc-showcase>.intro.portfolio-intro,main>.intro.portfolio-intro{padding:18px 6%}
+ .ugc-page .portfolio-intro p,main>.portfolio-intro p{font-size:15px}
+}
+
+/* Separate framed introductions on both portfolio pages. */
+.ugc-page .ugc-showcase>.intro.portfolio-intro,
+main>.intro.portfolio-intro{
+ border:1px solid #bda58f;background:#eee5da;
+}
+.ugc-page .portfolio-intro h1,
+main>.portfolio-intro h1{font-weight:700}
+
+/* Keep the frames with the original TEGO WARTE page background. */
+.ugc-page .ugc-showcase>.intro.portfolio-intro,
+main>.intro.portfolio-intro{background:#f7f3ed}
+
+/* Full-width horizontal rules, without vertical frame edges. */
+.ugc-page .ugc-showcase>.intro.portfolio-intro,
+main>.intro.portfolio-intro{position:relative;border:0}
+.portfolio-intro::before,.portfolio-intro::after{
+ content:"";position:absolute;left:0;right:0;height:1px;
+ background:#bda58f;box-shadow:0 0 0 100vmax #bda58f;
+ clip-path:inset(0 -100vmax);pointer-events:none;
+}
+.portfolio-intro::before{top:0}
+.portfolio-intro::after{bottom:0}
+main>.portfolio-intro+.section{border-top:0}
+
+/* A subtle weight increase without Georgia's heavy bold cut. */
+.ugc-page .portfolio-intro h1,
+main>.portfolio-intro h1{
+ font-weight:400;-webkit-text-stroke:.3px currentColor;
+}
+
+/* Warm brown titles on both portfolio introductions. */
+.ugc-page .portfolio-intro h1,
+main>.portfolio-intro h1{color:#665044}
+
+/* Clear, dark-brown UGC film captions. */
+.ugc-page .ugc-showcase .grid article>h3{color:#3f2b22}
+.ugc-page .ugc-showcase .grid article>span{color:#624a3c}
+
+/* Let the clip fill its frame; float title and actions over the picture. */
+.film-dialog{padding:0;overflow:hidden;max-height:94dvh}
+.film-dialog .film-player{margin:0;max-width:100%;object-fit:contain}
+.film-dialog .film-toolbar{
+ position:absolute;top:0;left:0;right:0;z-index:2;
+ margin:0;padding:12px;gap:8px;align-items:center;
+ background:rgba(35,27,22,.48);color:#fff;
+}
+.film-dialog .film-toolbar h2{
+ font-size:18px;line-height:1.2;color:#fff;
+ text-shadow:0 1px 3px rgba(0,0,0,.5);
+}
+.film-dialog .film-toolbar button{
+ background:rgba(35,27,22,.55);border-color:rgba(229,215,200,.65);color:#fff;
+}
+.film-dialog .film-toolbar button:hover{background:#665044}
+.film-dialog .film-error{position:absolute;inset:auto 12px 65px;background:#29221d;padding:12px;z-index:3}
+@media(max-width:600px){
+ .film-dialog .film-toolbar{padding:8px;gap:6px}
+ .film-dialog .film-toolbar h2{font-size:16px}
+ .film-dialog .film-toolbar button{font-size:10px;padding:5px 7px}
+}
+
+/* Strong caption contrast on the beige galleries, overriding old brown-section styles. */
+.ugc-page .ugc-showcase .section .grid article>h3,
+main>.section .grid article>h3{color:#3f2b22;opacity:1}
+.ugc-page .ugc-showcase .section .grid article>span,
+main>.section .grid article>span{color:#624a3c;opacity:1}
+
+/* Custom controls keep the volume clear of the title and window actions. */
+.clip-controls,.clip-volume{
+ position:absolute;z-index:3;display:flex;align-items:center;gap:10px;
+ background:rgba(35,27,22,.76);border:1px solid rgba(229,215,200,.45);
+ border-radius:24px;color:#fff;padding:9px 12px;
+ font:12px 'Avenir Next',Arial,sans-serif;
+}
+.clip-controls{bottom:12px;left:12px;right:12px;flex-wrap:wrap}
+.clip-volume{right:12px;top:50%;transform:translateY(-50%);flex-direction:column;padding:10px 8px;gap:12px}
+.clip-controls button,.clip-volume button{
+ display:grid;place-items:center;flex-shrink:0;width:28px;height:28px;
+ border:0;padding:0;background:transparent;color:#fff;cursor:pointer;font-size:18px;
+}
+.clip-volume svg{width:23px;height:23px}
+.clip-time{white-space:nowrap;font-variant-numeric:tabular-nums}
+.clip-seek{flex:1;min-width:70px;margin:0}
+.clip-volume-slider{writing-mode:vertical-lr;direction:rtl;width:18px;height:100px;margin:0}
+.clip-controls input,.clip-volume input{accent-color:#e5d7c8;cursor:pointer}
+.clip-controls button:focus-visible,.clip-volume button:focus-visible{outline:2px solid #e5d7c8;outline-offset:2px;border-radius:4px}
+.film-dialog:fullscreen{max-width:none;max-height:none;width:100vw!important;height:100dvh;padding:0;border:0;display:grid;place-items:center;background:#231b16}
+.film-dialog:fullscreen .film-player{width:100%!important;height:100%!important;object-fit:contain}
+
+/* Selected UGC partnerships, consistent with the warm editorial palette. */
+.trusted-brands{padding-top:44px;padding-bottom:44px}
+.trusted-brands h2{font:clamp(30px,3vw,40px)/1.2 Georgia,serif;color:#665044;margin:14px 0 28px}
+.brand-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px}
+.brand-list li{display:flex;align-items:center;min-height:84px;padding:18px 0;border-top:1px solid #bda58f;color:#50392d;font:22px/1.3 Georgia,serif;overflow-wrap:anywhere}
+@media(max-width:700px){.brand-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.brand-list li{font-size:19px;min-height:74px}}
+
+/* Balanced alignment for the three cooperation notes. */
+.section.notes{text-align:center;align-items:start}
+.section.notes>div{min-width:0}
+.section.notes h3{margin:0 0 14px}
+.section.notes p{max-width:34ch;margin:0 auto;line-height:1.7;text-align:center}
+.trusted-brands .trusted-note{
+ max-width:none;margin:24px 0 0;text-align:center;
+ color:#70665e;font:14px/1.6 'Avenir Next',Avenir,Arial,sans-serif;
+}
+
+/* Compact volume popover anchored to the bottom controls. */
+.clip-controls .clip-volume{
+ position:relative;inset:auto;transform:none;flex-shrink:0;
+ padding:0;border:0;border-radius:0;background:transparent;gap:0;
+}
+.clip-controls .clip-volume-slider{
+ display:none;position:absolute;right:0;bottom:34px;width:36px;height:112px;
+ padding:10px 6px;border:1px solid rgba(229,215,200,.45);border-radius:18px;
+ background:rgba(35,27,22,.85);
+}
+.clip-controls .clip-volume:hover .clip-volume-slider,
+.clip-controls .clip-volume:focus-within .clip-volume-slider,
+.clip-controls .clip-volume.is-expanded .clip-volume-slider{display:block}
+.clip-controls .clip-volume::before{content:"";position:absolute;right:0;bottom:25px;width:36px;height:12px}
+
+/* Gentle one-time entrances, with a small stagger in repeated content. */
+.motion-reveal{
+ opacity:0;translate:0 18px;
+ transition:opacity .65s ease var(--reveal-delay,0ms),translate .65s cubic-bezier(.2,.65,.3,1) var(--reveal-delay,0ms);
+}
+.motion-reveal.is-visible{opacity:1;translate:0 0}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .film-preview .film-cover{transition:transform .4s ease,filter .25s ease}
+ .film-preview:hover .film-cover{transform:scale(1.025)}
+ .film-play{transition:transform .25s ease,background .25s ease}
+ .film-preview:hover .film-play{transform:translate(-50%,-50%) scale(1.06)}
+}
+@keyframes film-appear{from{opacity:0}to{opacity:1}}
+.film-dialog[open]{animation:film-appear .2s ease-out}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .motion-reveal{opacity:1;translate:none;transition:none}
+ .film-dialog[open]{animation:none}
+ .entry-frame,.film-preview,.film-cover,.film-play,nav a,.welcome-socials a{transition:none!important}
+}
+
+/* A gentle lift in scale for the two homepage offer cards. */
+.welcome .entry-frame{transition:background .25s ease,transform .3s ease,box-shadow .3s ease}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .welcome .entry-frame:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(80,57,45,.08)}
+}
+.welcome .entry-frame:focus-visible{transform:scale(1.02);box-shadow:0 6px 20px rgba(80,57,45,.08)}
+@media(prefers-reduced-motion:reduce){.welcome .entry-frame:focus-visible{transform:none}}
+
+/* Match the about portrait's hover to the homepage offer cards. */
+.about>img{transition:transform .3s ease,box-shadow .3s ease,opacity .65s ease var(--reveal-delay,0ms),translate .65s cubic-bezier(.2,.65,.3,1) var(--reveal-delay,0ms)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .about>img:hover{transform:scale(1.02);box-shadow:0 6px 20px rgba(80,57,45,.08)}
+}
+@media(prefers-reduced-motion:reduce){.about>img{transition:none}}
+
+/* The same film title and category typography in both portfolios. */
+.ugc-page .ugc-showcase .grid article>h3,
+main .grid article>h3{
+ font-family:Georgia,serif;font-size:23px;font-weight:400;font-style:normal;
+ line-height:1.3;letter-spacing:0;
+}
+.ugc-page .ugc-showcase .grid article>span,
+main .grid article>span{
+ font-family:'Avenir Next',Avenir,Arial,sans-serif;font-size:11px;
+ font-weight:400;font-style:normal;line-height:1.6;letter-spacing:1.3px;
+}
+@media(max-width:600px){
+ .ugc-page .ugc-showcase .grid article>h3,main .grid article>h3{font-size:19px}
+}
+
+.welcome-content>p{white-space:normal}
+@media(max-width:380px){nav .brand{gap:9px}.brand-wordmark{width:140px}nav .brand-wordmark .brand-logo{width:140px;top:-57px}}
